@@ -1,5 +1,5 @@
 {
-  "name": "react_search",
+  "name": "reactomorph",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -29,7 +29,6 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.1.18",
     "classnames": "^2.2.6",
-    "lodash": "^3.10.1",
     "react-dom": "^16.4.1",
     "react-loaders": "^3.0.1",
     "react-router": "^4.3.1",

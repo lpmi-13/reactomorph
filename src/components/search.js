@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
@@ -23,6 +22,21 @@ class SearchDerivations extends Component {
     this.wordSearch('state');
   }
 
+  debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
   wordSearch(term) {
 
     axios.get(BASE_URL + term)
@@ -35,7 +49,7 @@ class SearchDerivations extends Component {
 
   render() {
 
-    const initialSearch = _.debounce((term) => { this.wordSearch(term) }, 300);
+    const initialSearch = this.debounce((term) => { this.wordSearch(term) }, 300);
 
     return (
       <div>
