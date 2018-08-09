@@ -18,7 +18,7 @@ const WordList = (props) => {
     }) : <WordListItem word={'nothing found'} />;
 
     return (
-      <ul className="col-md-4 list-group">
+      <ul className="list-group">
         {wordItems.length > 0 ? wordItems : ''} 
       </ul>
     );
