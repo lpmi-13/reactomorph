@@ -6,32 +6,20 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: __dirname + '/dist',
+    filename: 'main.js',
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: '/node_modules',
-        use: {
-          loader: "babel-loader"
+        loader: "babel-loader",
+        query: {
+          presets: ["es2015", "react"]
         }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader:  "css-loader",
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true,
-              minimize: true
-            }
-          }
-        ]
       }
     ]
   },

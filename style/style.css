@@ -1,3 +1,12 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  color: black;
+}
+
 .btn-primary {
   margin: 10px;
 }
@@ -19,6 +28,10 @@
 
 .search-bar input {
   width: 75%;
+}
+
+.specific-word {
+  font-size: 1.85rem;
 }
 
 .word-item {

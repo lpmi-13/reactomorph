@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import axios from 'axios';
-import Header from './header';
 import SearchBar from './search_bar';
 import WordList from './word_list';
 
@@ -40,13 +39,10 @@ class SearchDerivations extends Component {
 
     return (
       <div>
-        <Header />
+        <h2>Search for related words</h2>
         <div>
-          <h2>Search for related words</h2>
-          <div>
-            <SearchBar onSearchTermChange={initialSearch} />
-            <WordList words={this.state.words === null ? [] : this.state.words} />
-          </div>
+          <SearchBar onSearchTermChange={initialSearch} />
+          <WordList words={this.state.words === null ? [] : this.state.words} />
         </div>
       </div>
     );
