@@ -11,6 +11,11 @@ module.exports = {
     path: __dirname + '/dist',
     filename: 'main.js',
   },
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+  },
   module: {
     rules: [
       {
