@@ -6,10 +6,10 @@ import Search from './search';
 const Main = () => (
   <main>
     <Switch>
-      <Route path='/search' component={Search}/>
-      <Route path='/' component={Home}/>
+      <Route path="/search" component={Search} />
+      <Route path="/" component={Home} />
     </Switch>
   </main>
-)
+);
 
 export default Main;

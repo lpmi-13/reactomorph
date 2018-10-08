@@ -8,7 +8,6 @@ import WordItem from './word_item';
 const BASE_URL = 'https://micromaterials.org/derivation-api/list';
 
 class List extends Component {
-
   constructor(props) {
     super(props);
 
@@ -22,17 +21,15 @@ class List extends Component {
   }
 
   getList() {
-    axios.get(BASE_URL)
-      .then(response => {
-       console.log(response.data);
-       if(response.data) {
-         this.setState({wordList:response.data});
-       }
-     });
+    axios.get(BASE_URL).then(response => {
+      console.log(response.data);
+      if (response.data) {
+        this.setState({ wordList: response.data });
+      }
+    });
   }
 
   render() {
-
     let className = cx({
       hidden: this.state.wordList,
       active: !this.state.wordList
@@ -45,15 +42,13 @@ class List extends Component {
           <h2>Full list of words</h2>
           <Loader className={className} />
           <div className="row">
-            {this.state.wordList && this.state.wordList.map((word) => (
-              <div className="word-item col-12-xs">
-                <WordItem 
-                  word={word}
-                  key={word}
-                />
-              </div>
-            ))}
-          </div>          
+            {this.state.wordList &&
+              this.state.wordList.map(word => (
+                <div className="word-item col-12-xs">
+                  <WordItem word={word} key={word} />
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     );

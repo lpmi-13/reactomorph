@@ -1,29 +1,29 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./src/index.html",
-  filename: "./index.html",
+  template: './src/index.html',
+  filename: './index.html'
 });
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: __dirname + '/dist',
-    filename: 'main.js',
+    filename: 'main.js'
   },
   externals: {
-    'cheerio': 'window',
+    cheerio: 'window',
     'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': true,
+    'react/lib/ReactContext': true
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         exclude: '/node_modules',
-        loader: "babel-loader",
+        loader: 'babel-loader',
         query: {
-          presets: ["es2015", "react"]
+          presets: ['es2015', 'react']
         }
       }
     ]

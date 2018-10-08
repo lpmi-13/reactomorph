@@ -6,7 +6,7 @@ import Home from '../src/components/home.js';
 
 describe('<Home/>', () => {
   it('should render without exploding', () => {
-    const wrapper = shallow(<Home/>);
+    const wrapper = shallow(<Home />);
     expect(wrapper.find('div')).to.have.length(1);
   });
 });
